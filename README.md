@@ -119,18 +119,9 @@ If true, the cookie transmission requires a secure protocol (https). Default: `f
 
     samesite: 'Lax' | 'Strict' | 'None'
 
-##Lax
-Cookies are allowed to be sent with top-level navigations and will be sent along with GET request initiated by third party website. This is the default value in modern browsers.
+The SameSite attribute of the Set-Cookie HTTP response header allows you to declare if your cookie should be restricted to a first-party or same-site context. 
 
-##Strict
-Cookies will only be sent in a first-party context and not be sent along with requests initiated by third party websites.
-
-##None
-Cookies will be sent in all contexts, i.e sending cross-origin is allowed.
-
-None used to be the default value, but recent browser versions made Lax the default value to have reasonably robust defense against some classes of cross-site request forgery (CSRF) attacks.
-
-None requires the Secure attribute in latest browser versions. See below for more information.
+(From [MDN Web Docs (SameSite cookies)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite))
 
 ## Converters
 
