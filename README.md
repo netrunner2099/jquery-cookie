@@ -115,6 +115,23 @@ Define the domain where the cookie is valid. Default: domain of page where the c
 
 If true, the cookie transmission requires a secure protocol (https). Default: `false`.
 
+### samesite
+
+    samesite: 'Lax' | 'Strict' | 'None'
+
+##Lax
+Cookies are allowed to be sent with top-level navigations and will be sent along with GET request initiated by third party website. This is the default value in modern browsers.
+
+##Strict
+Cookies will only be sent in a first-party context and not be sent along with requests initiated by third party websites.
+
+##None
+Cookies will be sent in all contexts, i.e sending cross-origin is allowed.
+
+None used to be the default value, but recent browser versions made Lax the default value to have reasonably robust defense against some classes of cross-site request forgery (CSRF) attacks.
+
+None requires the Secure attribute in latest browser versions. See below for more information.
+
 ## Converters
 
 Provide a conversion function as optional last argument for reading, in order to change the cookie's value
